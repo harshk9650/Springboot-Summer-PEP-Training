@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Employees</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="emoji-icon">🚀</span>
+                <h2>EmpManage</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/"><span class="emoji-icon">🏠</span> Dashboard</a></li>
+                <li><a href="/create"><span class="emoji-icon">➕</span> Create Employee</a></li>
+                <li><a href="/display" class="active"><span class="emoji-icon">📋</span> View Employees</a></li>
+                <li><a href="/raise-salary"><span class="emoji-icon">💰</span> Raise Salary</a></li>
+                <li class="logout"><a href="/exit"><span class="emoji-icon">🚪</span> Exit</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <h2>All Employees</h2>
+            </header>
+            <div class="content-wrapper">
+                <div class="table-container">
+                    <table class="table-custom">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Designation</th>
+                                <th>Salary</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="employee : ${employees}">
+                                <td th:text="${employee.name}">Name</td>
+                                <td th:text="${employee.age}">Age</td>
+                                <td><span class="badge" th:text="${employee.designation}">Designation</span></td>
+                                <td style="font-weight:600; color:var(--success-color);" th:text="${'$' + employee.salary}">Salary</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

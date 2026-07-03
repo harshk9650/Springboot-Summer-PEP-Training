@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="emoji-icon">🚀</span>
+                <h2>EmpManage</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/"><span class="emoji-icon">🏠</span> Dashboard</a></li>
+                <li><a href="/create"><span class="emoji-icon">➕</span> Create Employee</a></li>
+                <li><a href="/display"><span class="emoji-icon">📋</span> View Employees</a></li>
+                <li><a href="/raise-salary" class="active"><span class="emoji-icon">💰</span> Raise Salary</a></li>
+                <li class="logout"><a href="/exit"><span class="emoji-icon">🚪</span> Exit</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <h2>Raise Employee Salary</h2>
+            </header>
+            <div class="content-wrapper" style="display:flex; align-items:center; justify-content:center;">
+                <div class="card success-box">
+                    <div style="font-size: 64px; margin-bottom: 16px;">🎉</div>
+                    <h2>Salary Raised Successfully!</h2>
+                    <p>Do you want to raise someone else's salary?</p>
+                    
+                    <div class="btn-group">
+                        <a href="/raise-salary" class="btn">Yes, give another raise</a>
+                        <a href="/exit" class="btn btn-secondary">No, exit</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
