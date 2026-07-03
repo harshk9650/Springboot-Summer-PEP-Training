@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Employee</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="emoji-icon">🚀</span>
+                <h2>EmpManage</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/"><span class="emoji-icon">🏠</span> Dashboard</a></li>
+                <li><a href="/create" class="active"><span class="emoji-icon">➕</span> Create Employee</a></li>
+                <li><a href="/display"><span class="emoji-icon">📋</span> View Employees</a></li>
+                <li><a href="/raise-salary"><span class="emoji-icon">💰</span> Raise Salary</a></li>
+                <li class="logout"><a href="/exit"><span class="emoji-icon">🚪</span> Exit</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <h2>Create New Employee</h2>
+            </header>
+            <div class="content-wrapper">
+                <div class="card">
+                    <h3>Employee Details</h3>
+                    <form action="#" th:action="@{/create}" th:object="${employee}" method="post">
+                        <div class="form-group">
+                            <label>Name:</label>
+                            <input type="text" th:field="*{name}" placeholder="e.g., John Doe">
+                            <span class="error-text" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Age (18-60):</label>
+                            <input type="number" th:field="*{age}" min="18" max="60" placeholder="e.g., 25">
+                            <span class="error-text" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Designation:</label>
+                            <select th:field="*{designation}">
+                                <option value="PROG">Programmer (PROG - 25K)</option>
+                                <option value="MANG">Manager (MANG - 30K)</option>
+                                <option value="TEST">Tester (TEST - 20K)</option>
+                            </select>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn">Save Employee</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

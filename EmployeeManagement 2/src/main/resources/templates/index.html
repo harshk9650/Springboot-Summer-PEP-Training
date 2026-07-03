@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="emoji-icon">🚀</span>
+                <h2>EmpManage</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/" class="active"><span class="emoji-icon">🏠</span> Dashboard</a></li>
+                <li><a href="/create"><span class="emoji-icon">➕</span> Create Employee</a></li>
+                <li><a href="/display"><span class="emoji-icon">📋</span> View Employees</a></li>
+                <li><a href="/raise-salary"><span class="emoji-icon">💰</span> Raise Salary</a></li>
+                <li class="logout"><a href="/exit"><span class="emoji-icon">🚪</span> Exit</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="topbar">
+                <h2>Employee Management System</h2>
+            </header>
+            <div class="content-wrapper">
+                
+                <!-- Awesome Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: var(--gradient-1);">👥</div>
+                        <div class="stat-info">
+                            <h4>Staff Count</h4>
+                            <p>Active</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: var(--gradient-2);">💼</div>
+                        <div class="stat-info">
+                            <h4>Roles</h4>
+                            <p>3 Depts</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: var(--gradient-3);">📈</div>
+                        <div class="stat-info">
+                            <h4>System Health</h4>
+                            <p>100%</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Actions Grid -->
+                <h3 style="margin: 32px 0 24px; font-weight: 700; color: #fff; font-size: 24px;">Quick Actions</h3>
+                <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <a href="/create" style="text-decoration: none; color: inherit;">
+                        <div class="stat-card" style="flex-direction: column; text-align: center; gap: 16px; padding: 40px 20px;">
+                            <div class="stat-icon" style="width: 80px; height: 80px; font-size: 36px; background: rgba(99, 102, 241, 0.2); box-shadow: none;">✨</div>
+                            <div>
+                                <h4 style="font-size: 20px; color: #fff; margin-bottom: 8px; letter-spacing: 0;">Add New Employee</h4>
+                                <p style="font-size: 14px; color: var(--text-secondary); font-weight: 500;">Onboard new staff into the system</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/display" style="text-decoration: none; color: inherit;">
+                        <div class="stat-card" style="flex-direction: column; text-align: center; gap: 16px; padding: 40px 20px;">
+                            <div class="stat-icon" style="width: 80px; height: 80px; font-size: 36px; background: rgba(59, 130, 246, 0.2); box-shadow: none;">📊</div>
+                            <div>
+                                <h4 style="font-size: 20px; color: #fff; margin-bottom: 8px; letter-spacing: 0;">View Directory</h4>
+                                <p style="font-size: 14px; color: var(--text-secondary); font-weight: 500;">Browse all staff and their details</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/raise-salary" style="text-decoration: none; color: inherit;">
+                        <div class="stat-card" style="flex-direction: column; text-align: center; gap: 16px; padding: 40px 20px;">
+                            <div class="stat-icon" style="width: 80px; height: 80px; font-size: 36px; background: rgba(16, 185, 129, 0.2); box-shadow: none;">💰</div>
+                            <div>
+                                <h4 style="font-size: 20px; color: #fff; margin-bottom: 8px; letter-spacing: 0;">Manage Salaries</h4>
+                                <p style="font-size: 14px; color: var(--text-secondary); font-weight: 500;">Adjust compensation packages</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Raise Salary</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="emoji-icon">🚀</span>
+                <h2>EmpManage</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/"><span class="emoji-icon">🏠</span> Dashboard</a></li>
+                <li><a href="/create"><span class="emoji-icon">➕</span> Create Employee</a></li>
+                <li><a href="/display"><span class="emoji-icon">📋</span> View Employees</a></li>
+                <li><a href="/raise-salary" class="active"><span class="emoji-icon">💰</span> Raise Salary</a></li>
+                <li class="logout"><a href="/exit"><span class="emoji-icon">🚪</span> Exit</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <h2>Raise Employee Salary</h2>
+            </header>
+            <div class="content-wrapper">
+                <div class="card">
+                    <h3>Update Salary</h3>
+                    <div th:if="${error != null}" style="margin-bottom: 20px; padding: 12px; background: rgba(239, 68, 68, 0.1); border-left: 4px solid var(--danger-color); border-radius: 4px;">
+                        <p class="error-text" th:text="${error}" style="margin: 0;"></p>
+                    </div>
+
+                    <form action="#" th:action="@{/raise-salary}" method="post">
+                        <div class="form-group">
+                            <label>Name of the Employee:</label>
+                            <input type="text" name="name" required placeholder="Enter exact name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Percentage to Change (1-10):</label>
+                            <input type="number" name="percentage" min="1" max="10" required placeholder="e.g., 5">
+                        </div>
+                        <br>
+                        <button type="submit" class="btn">Apply Raise</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
